@@ -96,25 +96,24 @@ for (let nuevo_prestamo of lista_prestamos) {
 }
 // FIN RENDER //
 
-// BAJA DE PRESTAMOS //
+// busqueda de prestamos //
 
-function buscar_id(Prestamo, baja) {
-  return Prestamo.id == baja;
+function buscar_id(Prestamo) {
+  return Prestamo.id == busqueda_prestamo;
 }
-let resultado_busqueda = lista_prestamos.find(buscar_id);
-console.log("el prestamo buscado se encontro", resultado_busqueda);
-function baja_prestamo() {
-  fin = parseInt(prompt("Para dar de baja algun prestamo ingrese 1, sino 2"));
-  while (fin != 2) {
-    let baja = parseInt(prompt("Ingrese el id del prestamo a dar de baja"));
 
-    alert("Su prestamo se a dado de baja");
-    lista_prestamos.splice(baja - 1, 1);
-    fin = parseInt(prompt("Para dar de baja algun prestamo ingrese 1, sino 2"));
+fin = parseInt(prompt("Para buscar algun prestamo ingrese 1, sino 2"));
+while (fin != 2) {
+  busqueda_prestamo = parseInt(prompt("Ingrese el id del prestamo"));
+  let resultado_busqueda = lista_prestamos.find(buscar_id);
+  if (resultado_busqueda != undefined) {
+    console.log("el prestamo buscado se encontro", resultado_busqueda);
+  } else {
+    alert("no se encontro el prestamo");
   }
+
+  fin = parseInt(prompt("Para buscar algun prestamo mas ingrese 1, sino 2"));
 }
 
-baja_prestamo();
-for (let nuevo_prestamo of lista_prestamos) {
-  nuevo_prestamo.get_datos();
-}
+//let resultado_busqueda = lista_prestamos.find(buscar_id);
+//console.log("el prestamo buscado se encontro", resultado_busqueda);
