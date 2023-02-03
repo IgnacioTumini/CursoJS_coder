@@ -110,7 +110,7 @@
       </section>
       <section class="section-2" #section2>
         <div class="div-prestamo col-12 col-md-6">
-          <h2 class="w-100 d-flex justify-content-center">
+          <h2 class="w-100 d-flex justify-content-center letra_titulos">
             Solicita tu prestamo
           </h2>
           <form class="form_prestamo col-12" action="">
@@ -118,7 +118,7 @@
               <div class="mb-3">
                 <input
                   type="name"
-                  class="form-control input_estilo"
+                  class="form-control"
                   placeholder="Nombre"
                   id="exampleInputPassword1"
                   required
@@ -155,6 +155,7 @@
                 />
               </div>
               <select
+                required
                 class="form-select"
                 aria-label="Default select example"
                 id="select_cuotas"
@@ -176,6 +177,42 @@
                 >
                   Calcular
                 </button>
+              </div>
+              <div class="input-group flex-nowrap mb-3">
+                <span class="input-group-text" id="addon-wrapping"
+                  >Total por mes</span
+                >
+                <input
+                  disabled
+                  type="name"
+                  class="form-control"
+                  placeholder=""
+                  id="exampleInputPassword10"
+                />
+              </div>
+              <div class="input-group flex-nowrap mb-3">
+                <span class="input-group-text" id="addon-wrapping"
+                  >Pago total</span
+                >
+                <input
+                  disabled
+                  type="name"
+                  class="form-control"
+                  placeholder=""
+                  id="exampleInputPassword11"
+                />
+              </div>
+              <div class="input-group flex-nowrap mb-3">
+                <span class="input-group-text" id="addon-wrapping"
+                  >Total de intereses</span
+                >
+                <input
+                  disabled
+                  type="name"
+                  class="form-control"
+                  placeholder=""
+                  id="exampleInputPassword12"
+                />
               </div>
             </form>
           </form>

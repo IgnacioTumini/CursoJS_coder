@@ -79,7 +79,6 @@ function toma_datos() {
   // INICIO RENDER DE PRESTAMOS //
 
   for (let nuevo_prestamo of lista_prestamos) {
-    console.clear;
     nuevo_prestamo.get_datos();
   }
   // FIN RENDER //

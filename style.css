@@ -14,6 +14,9 @@
 .letra_nav:hover {
   color: grey;
 }
+.letra_titulos {
+  color: white;
+}
 .seccion-1 {
   min-height: 100vh;
   min-width: 100%;
@@ -55,7 +58,7 @@
   display: flex;
   justify-content: center;
   width: 50%;
-  height: 70vh;
+  min-height: 70vh;
   background-color: rgba(83, 211, 83, 0.719);
   border-radius: 3%;
 }
