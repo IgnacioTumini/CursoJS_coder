@@ -4,28 +4,38 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TumiPresta</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.all.min.js"></script>
+
+    <link rel="preconectar" href="https://fonts.googleapis.com" />
+    <link rel="preconectar" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="./style.css" />
+    <title>TumiPresta</title>
   </head>
   <body>
     <header class="header">
       <ul class="nav justify-content-center">
         <li class="nav-item">
-          <a class="nav-link letra_nav" aria-current="page" href="#">Inicio</a>
+          <a class="nav-link letra_nav" aria-current="page" href="#seccion-1"
+            >Inicio</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link letra_nav" href="#section2">Pedi tu Prestamo</a>
+          <a class="nav-link letra_nav" href="#Prestamo">Pedi tu Préstamo</a>
         </li>
       </ul>
     </header>
     <main>
-      <section class="seccion-1">
+      <section class="seccion-1" id="seccion-1">
         <div id="carouselExampleCaptions" class="carousel slide">
           <div class="carousel-indicators">
             <button
@@ -63,7 +73,7 @@
             </div>
             <div class="carousel-item">
               <img
-                src="./assets/img/cropped-Prestamos-personales-Online-2.png"
+                src="./assets/img/4gQFjTVz_4x.jpg"
                 class="d-block w-100 img_carousel"
                 alt="slide2"
               />
@@ -108,10 +118,10 @@
           </button>
         </div>
       </section>
-      <section class="section-2" #section2>
+      <section class="section-2" id="Prestamo">
         <div class="div-prestamo col-12 col-md-6">
           <h2 class="w-100 d-flex justify-content-center letra_titulos">
-            Solicita tu prestamo
+            Solicita tu préstamo
           </h2>
           <form class="form_prestamo col-12" action="">
             <form>
@@ -171,49 +181,14 @@
               <div class="w-100 d-flex justify-content-center p-3">
                 <button
                   id="Button_calcular"
-                  type="submit"
+                  type="button"
                   onclick="toma_datos()"
-                  class="btn btn-light"
+                  class="btn btn-light hover_boton botones"
                 >
-                  Calcular
+                  CALCULAR PRÉSTAMO
                 </button>
               </div>
-              <div class="input-group flex-nowrap mb-3">
-                <span class="input-group-text" id="addon-wrapping"
-                  >Total por mes</span
-                >
-                <input
-                  disabled
-                  type="name"
-                  class="form-control"
-                  placeholder=""
-                  id="exampleInputPassword10"
-                />
-              </div>
-              <div class="input-group flex-nowrap mb-3">
-                <span class="input-group-text" id="addon-wrapping"
-                  >Pago total</span
-                >
-                <input
-                  disabled
-                  type="name"
-                  class="form-control"
-                  placeholder=""
-                  id="exampleInputPassword11"
-                />
-              </div>
-              <div class="input-group flex-nowrap mb-3">
-                <span class="input-group-text" id="addon-wrapping"
-                  >Total de intereses</span
-                >
-                <input
-                  disabled
-                  type="name"
-                  class="form-control"
-                  placeholder=""
-                  id="exampleInputPassword12"
-                />
-              </div>
+              <div class="lista_del_prestamo"></div>
             </form>
           </form>
         </div>
@@ -222,6 +197,7 @@
     <footer></footer>
 
     <script src="java.js"></script>
+
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
       integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
@@ -232,5 +208,6 @@
       integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
       crossorigin="anonymous"
     ></script>
+    <script src="sweetalert2.all.min.js"></script>
   </body>
 </html>

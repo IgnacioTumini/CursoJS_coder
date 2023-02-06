@@ -62,6 +62,9 @@ function toma_datos() {
   let monto = parseInt(document.getElementById("exampleInputPassword4").value);
   let cuotas = parseInt(document.getElementById("select_cuotas").value);
 
+  localStorage.setItem("nombre", nombre);
+  localStorage.setItem("apellido", apellido);
+
   monto_final = monto + calcular_interes(monto, cuotas);
 
   let nuevo_prestamo = new Prestamo(
@@ -82,10 +85,69 @@ function toma_datos() {
     nuevo_prestamo.get_datos();
   }
   // FIN RENDER //
+  let contenedor_muestra_usuario = document.querySelector(
+    ".lista_del_prestamo"
+  );
+  let muestra_usuario = `<div class="input-group flex-nowrap mb-3">
+   <span class="input-group-text" id="addon-wrapping4"
+     >Total por mes</span
+   >
+   <input
+     disabled
+     type="number"
+     class="form-control"
+     id="exampleInputPassword10"
+   />
+ </div>
+ <div class="input-group flex-nowrap mb-3">
+   <span class="input-group-text" id="addon-wrapping3"
+     >Pago total</span
+   >
+   <input
+     disabled
+     type="number"
+     class="form-control"
+     id="exampleInputPassword11"
+   />
+ </div>
+ <div class="input-group flex-nowrap mb-3">
+   <span class="input-group-text" id="addon-wrapping2"
+     >Total de intereses</span
+   >
+   <input
+     disabled
+     type="number"
+     class="form-control"
+     id="exampleInputPassword12"
+   />
+ </div> 
+ <div class="w-100 d-flex justify-content-center p-3">
+ <button type="button" onclick= "enviar_prestamo()" class="btn btn-light hover_boton">¡HAZ CLICK Y OBTENÉ TU PRÉSTAMO!</button>
+ </div>`;
+  contenedor_muestra_usuario.innerHTML = muestra_usuario;
+  let input_cuota = document.getElementById("exampleInputPassword10");
+  let inpunt_total = document.getElementById("exampleInputPassword11");
+  let input_interes = document.getElementById("exampleInputPassword12");
+
+  input_cuota.value = monto_final / cuotas;
+  inpunt_total.value = monto_final;
+  input_interes.value = calcular_interes(monto, cuotas);
 }
-function buscar_id(Prestamo) {
-  return Prestamo.id == busqueda_prestamo;
+
+function enviar_prestamo() {
+  let local_nombre = localStorage.getItem("nombre");
+  let local_apellido = localStorage.getItem("apellido");
+  Swal.fire({
+    title: "¡Hola," + local_nombre + " " + local_apellido + "!",
+    text: "Tu préstamo esta listo, te estaremos enviando un mail a tu correo.",
+    icon: "success",
+    timer: 4000,
+  });
 }
+
+//function buscar_id(Prestamo) {
+//  return Prestamo.id == busqueda_prestamo;
+//}
 
 //fin = parseInt(prompt("Para buscar algun prestamo ingrese 1, sino 2"));
 //while (fin != 2) {
