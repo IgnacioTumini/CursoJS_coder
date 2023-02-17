@@ -164,13 +164,11 @@ fetch(
     "&lon=" +
     longitud +
     "&appid=" +
-    key +
-    "&units=metric"
+    key
 )
   .then((respose) => respose.json())
   .then((data) => {
-    contenedor_muestra_clima.innerHTML = `<p class="letra_footer clima">Temp. hoy : ${data.main.temp}º </p>
-                                            `;
+    contenedor_muestra_clima.innerHTML = `<p class="letra_footer clima">Temp. hoy : ${data.main.temp} </p>`;
   });
 
 //function buscar_id(Prestamo) {
