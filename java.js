@@ -144,6 +144,34 @@ function enviar_prestamo() {
     timer: 4000,
   });
 }
+let contenedor_muestra_clima = document.querySelector(".div_clima");
+
+let latitud;
+let longitud;
+
+function mostrar_posicion(posicion) {
+  latitud = posicion.coords.latitude;
+  longitud = posicion.coords.longitude;
+}
+
+navigator.geolocation.getCurrentPosition(mostrar_posicion);
+
+let key = "a8aa41cb98e4703cfe8d3a18109b09aa";
+
+fetch(
+  "https://api.openweathermap.org/data/2.5/weather?lat=" +
+    latitud +
+    "&lon=" +
+    longitud +
+    "&appid=" +
+    key +
+    "&units=metric"
+)
+  .then((respose) => respose.json())
+  .then((data) => {
+    contenedor_muestra_clima.innerHTML = `<p class="letra_footer clima">Temp. hoy : ${data.main.temp}º </p>
+                                            `;
+  });
 
 //function buscar_id(Prestamo) {
 //  return Prestamo.id == busqueda_prestamo;
@@ -163,3 +191,4 @@ function enviar_prestamo() {
 
 //let resultado_busqueda = lista_prestamos.find(buscar_id);
 //console.log("el prestamo buscado se encontro", resultado_busqueda);
+//{contenedor_muestra_clima.innerHTML = `<p class="letra_footer clima">Temp. hoy : ${data.main.temp}</p>`;}

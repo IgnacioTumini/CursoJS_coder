@@ -6,7 +6,15 @@
   z-index: calc(4);
   width: 100%;
 }
+.letra_footer {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
 
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: white;
+  margin: 0;
+}
 .letra_nav {
   font-family: "Poppins", sans-serif;
   font-size: 15px;
@@ -21,10 +29,11 @@
 .letra_titulos {
   font-family: "Poppins", sans-serif;
   font-size: 35px;
+  align-items: center;
 
   font-weight: 600;
 
-  letter-spacing: 5px;
+  letter-spacing: 3px;
   color: white;
 }
 .seccion-1 {
@@ -85,4 +94,45 @@
 .hover_boton:hover {
   background-color: rgb(0, 255, 149);
   border-color: rgb(0, 255, 149);
+}
+
+.footer {
+  background-color: rgba(83, 211, 83, 0.884);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  min-height: 10vh;
+
+  width: 100%;
+}
+
+.icon_redes {
+  display: flex;
+  gap: 8px;
+  color: white;
+  width: 100%;
+
+  justify-content: center;
+  align-items: center;
+}
+.redes {
+  color: white;
+}
+.hover-whatsapp:hover {
+  color: green;
+}
+.hover-instagram:hover {
+  color: rgb(177, 65, 162);
+}
+.hover-linkedin:hover {
+  color: rgb(55, 159, 201);
+}
+.clima {
+  display: flex;
+  background-color: rgba(0, 174, 255, 0.918);
+  border-radius: 3%;
+  margin-left: auto;
 }
