@@ -1,10 +1,29 @@
 .header {
   display: flex;
   justify-content: center;
-  background-color: rgba(83, 211, 83, 0.884);
+  background-color: rgb(83, 211, 83);
   position: fixed;
   z-index: calc(4);
   width: 100%;
+}
+.titulo_principal {
+  font-family: "Poppins", sans-serif;
+  font-size: 60px;
+  align-items: center;
+  border-bottom: 3px solid rgb(83, 211, 83);
+
+  font-weight: 600;
+
+  letter-spacing: 3px;
+  color: white;
+}
+.descripcion_titulo {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: white;
 }
 .letra_footer {
   font-family: "Poppins", sans-serif;
@@ -37,9 +56,23 @@
   color: white;
 }
 .seccion-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   min-height: 100vh;
   min-width: 100%;
+  background-image: linear-gradient(
+      115deg,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url(./assets/img/2d6fafec-a7cb-43bf-998a-f73bca71a5f1.png);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
 }
+
 .carousel-item {
   max-height: 60vh;
 }
