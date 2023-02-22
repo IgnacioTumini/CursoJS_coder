@@ -148,45 +148,41 @@ let contenedor_muestra_clima = document.querySelector(".div_clima");
 
 let latitud;
 let longitud;
-
+let temp;
 function mostrar_posicion(posicion) {
   latitud = posicion.coords.latitude;
   longitud = posicion.coords.longitude;
+  console.log(posicion);
 }
 
 navigator.geolocation.getCurrentPosition(mostrar_posicion);
 
 let key = "a8aa41cb98e4703cfe8d3a18109b09aa";
+function getDatos() {
+  navigator.geolocation.getCurrentPosition(mostrar_posicion);
+  fetch(
+    "https://api.openweathermap.org/data/2.5/weather?lat=" +
+      latitud +
+      "&lon=" +
+      longitud +
+      "&appid=" +
+      key +
+      "&lang=es&units=metric"
+  )
+    .then((respose) => respose.json())
 
-fetch(
-  "https://api.openweathermap.org/data/2.5/weather?lat=" +
-    latitud +
-    "&lon=" +
-    longitud +
-    "&appid=" +
-    key
-)
-  .then((respose) => respose.json())
-  .then((data) => {
-    contenedor_muestra_clima.innerHTML = `<p class="letra_footer clima">Temp. hoy :${data.main.temp}</p>`;
-  });
+    .then((data) => {
+      temp = data.main.temp;
+      contenedor_muestra_clima.innerHTML = `<p class="letra_footer clima">Temp. hoy : ${data.main.temp}ºC ${data.weather[0].description} </p>`;
+    })
+    .catch((err) => {
+      console.log(err);
+      contenedor_muestra_clima.innerHTML = `<p class="letra_footer clima">Temp. hoy : ${
+        temp || "error"
+      }- se necesita actualizar</p>`;
+    });
+}
 
-//function buscar_id(Prestamo) {
-//  return Prestamo.id == busqueda_prestamo;
-//}
-
-//fin = parseInt(prompt("Para buscar algun prestamo ingrese 1, sino 2"));
-//while (fin != 2) {
-//  busqueda_prestamo = parseInt(prompt("Ingrese el id del prestamo"));
-//  let resultado_busqueda = lista_prestamos.find(buscar_id);
-//  if (resultado_busqueda != undefined) {
-//    console.log("el prestamo buscado se encontro", resultado_busqueda);
-//  } else {
-//alert("no se encontro el prestamo");
-//}
-
-//  fin = parseInt(prompt("Para buscar algun prestamo mas ingrese 1, sino 2"));
-
-//let resultado_busqueda = lista_prestamos.find(buscar_id);
-//console.log("el prestamo buscado se encontro", resultado_busqueda);
-//{contenedor_muestra_clima.innerHTML = `<p class="letra_footer clima">Temp. hoy : ${data.main.temp}</p>`;}
+setInterval(() => {
+  getDatos();
+}, 8000);

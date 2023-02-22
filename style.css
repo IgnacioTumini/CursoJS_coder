@@ -1,10 +1,11 @@
 .header {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   background-color: rgb(83, 211, 83);
   position: fixed;
   z-index: calc(4);
   width: 100%;
+  align-items: center;
 }
 .titulo_principal {
   font-family: "Poppins", sans-serif;
@@ -163,9 +164,30 @@
 .hover-linkedin:hover {
   color: rgb(55, 159, 201);
 }
+.logo {
+  height: 50px;
+  width: 50px;
+}
 .clima {
   display: flex;
   background-color: rgba(0, 174, 255, 0.918);
   border-radius: 3%;
   margin-left: auto;
+}
+.contenedor_titulo {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.arrow_icon {
+  width: 30px;
+  height: 30px;
+}
+.contenedor_arrow {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: fit-content;
 }
